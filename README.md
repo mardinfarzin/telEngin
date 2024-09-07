@@ -358,4 +358,330 @@ Sends a game.
 **Returns:**
 - `string`: API response.
   
+#### `sendVideo($chatId, $videoUrl, $caption = '', $parseMode = 'HTML', $supportsStreaming = false)`
+Sends a video.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `string $videoUrl`: URL of the video.
+- `string $caption`: (Optional) Video caption.
+- `string $parseMode`: (Optional) HTML or Markdown parse mode for captions. Default is 'HTML'.
+- `bool $supportsStreaming`: (Optional) Whether the video supports streaming. Default is `false`.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `sendLocation($chatId, $latitude, $longitude)`
+Sends a location.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `float $latitude`: Latitude of the location.
+- `float $longitude`: Longitude of the location.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `sendSticker($chatId, $stickerUrl)`
+Sends a sticker.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `string $stickerUrl`: URL of the sticker.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `sendKeyboard($chatId, $text, $keyboard, $resizeKeyboard = true, $oneTimeKeyboard = false, $parseMode = 'HTML')`
+Sends a text message with a custom keyboard.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `string $text`: Message text.
+- `array $keyboard`: Keyboard layout.
+- `bool $resizeKeyboard`: (Optional) Whether to resize the keyboard. Default is `true`.
+- `bool $oneTimeKeyboard`: (Optional) Whether the keyboard is hidden after use. Default is `false`.
+- `string $parseMode`: (Optional) HTML or Markdown parse mode for the text. Default is 'HTML'.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `sendContact($chatId, $phoneNumber, $firstName, $lastName = '')`
+Sends a contact.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `string $phoneNumber`: Phone number of the contact.
+- `string $firstName`: First name of the contact.
+- `string $lastName`: (Optional) Last name of the contact.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `sendAnimation($chatId, $animationUrl, $caption = '', $parseMode = 'HTML')`
+Sends an animation (GIF).
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `string $animationUrl`: URL of the animation.
+- `string $caption`: (Optional) Animation caption.
+- `string $parseMode`: (Optional) HTML or Markdown parse mode for captions. Default is 'HTML'.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `sendAudio($chatId, $audioUrl, $caption = '', $performer = '', $title = '', $duration = null, $parseMode = 'HTML')`
+Sends an audio file.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `string $audioUrl`: URL of the audio file.
+- `string $caption`: (Optional) Audio caption.
+- `string $performer`: (Optional) Performer of the audio.
+- `string $title`: (Optional) Title of the audio.
+- `int|null $duration`: (Optional) Duration of the audio in seconds.
+- `string $parseMode`: (Optional) HTML or Markdown parse mode for captions. Default is 'HTML'.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `sendVideoNote($chatId, $videoNoteUrl, $duration = null, $length = null)`
+Sends a video note.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `string $videoNoteUrl`: URL of the video note.
+- `int|null $duration`: (Optional) Duration of the video note in seconds.
+- `int|null $length`: (Optional) Length of the video note in pixels.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `sendDocument($chatId, $documentUrl, $caption = '', $parseMode = 'HTML')`
+Sends a document.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `string $documentUrl`: URL of the document.
+- `string $caption`: (Optional) Document caption.
+- `string $parseMode`: (Optional) HTML or Markdown parse mode for captions. Default is 'HTML'.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `sendPoll($chatId, $question, $options = [], $isAnonymous = true, $type = 'regular', $allowsMultipleAnswers = false)`
+Sends a poll.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `string $question`: Poll question.
+- `array $options`: List of poll options.
+- `bool $isAnonymous`: (Optional) Whether the poll is anonymous. Default is `true`.
+- `string $type`: (Optional) Poll type, 'regular' or 'quiz'. Default is 'regular'.
+- `bool $allowsMultipleAnswers`: (Optional) Whether multiple answers are allowed. Default is `false`.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `sendInlineKeyboard($chatId, $text, $inlineKeyboard, $parseMode = 'HTML')`
+Sends a text message with an inline keyboard.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `string $text`: Message text.
+- `array $inlineKeyboard`: Inline keyboard layout.
+- `string $parseMode`: (Optional) HTML or Markdown parse mode for the text. Default is 'HTML'.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `sendReplyMessage($chatId, $text, $replyToMessageId, $parseMode = 'HTML')`
+Sends a reply message.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `string $text`: Message text.
+- `int $replyToMessageId`: ID of the message to reply to.
+- `string $parseMode`: (Optional) HTML or Markdown parse mode for the text. Default is 'HTML'.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `forwardMessage($chatId, $fromChatId, $messageId)`
+Forwards a message.
+
+**Parameters:**
+- `int $chatId`: Chat ID to forward the message to.
+- `int $fromChatId`: Chat ID from which the message will be forwarded.
+- `int $messageId`: ID of the message to forward.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `sendMediaGroup($chatId, $media = [])`
+Sends a media group.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `array $media`: List of media items in JSON format.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `editMessageText($chatId, $messageId, $text, $parseMode = 'HTML')`
+Edits the text of a message.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `int $messageId`: ID of the message to edit.
+- `string $text`: New message text.
+- `string $parseMode`: (Optional) HTML or Markdown parse mode for the text. Default is 'HTML'.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `editMessageReplyMarkup($chatId, $messageId, $inlineKeyboard)`
+Edits the reply markup (inline keyboard) of a message.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `int $messageId`: ID of the message to edit.
+- `array $inlineKeyboard`: New inline keyboard layout.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `deleteMessage($chatId, $messageId)`
+Deletes a message.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `int $messageId`: ID of the message to delete.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `sendQuiz($chatId, $question, $options = [], $correctOptionId, $isAnonymous = true)`
+Sends a quiz.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `string $question`: Quiz question.
+- `array $options`: List of quiz options.
+- `int $correctOptionId`: ID of the correct option.
+- `bool $isAnonymous`: (Optional) Whether the quiz is anonymous. Default is `true`.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `customRequest($method, $params = [])`
+Sends a custom request to the Telegram API.
+
+**Parameters:**
+- `string $method`: API method to call.
+- `array $params`: (Optional) Parameters for the API request.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `setChatTitle($chatId, $title)`
+Changes the title of a chat.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `string $title`: New chat title.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `setChatDescription($chatId, $description)`
+Changes the description of a chat.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `string $description`: New chat description.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `sendWebAppMessage($chatId, $button_title, $webAppUrl, $text)`
+Sends a message with a Web App button.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `string $button_title`: Title of the Web App button.
+- `string $webAppUrl`: URL of the Web App.
+- `string $text`: Message text.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `banChatMember($chatId, $userId, $untilDate = null)`
+Bans a chat member.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `int $userId`: User ID to ban.
+- `int|null $untilDate`: (Optional) Date until the user is banned.
+
+**Returns:**
+- `string`: API response.
+
+---
+
+#### `restrictChatMember($chatId, $userId, $untilDate, $permissions)`
+Restricts a chat member.
+
+**Parameters:**
+- `int $chatId`: Chat ID.
+- `int $userId`: User ID to restrict.
+- `int $untilDate`: Date until the restrictions apply.
+- `array $permissions`: New chat permissions for the user.
+
+**Returns:**
+- `string`: API response.
 
